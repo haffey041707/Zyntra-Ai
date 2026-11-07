@@ -7,6 +7,10 @@ Zyntra is a local AI cybersecurity research workspace. It can run on another Mac
 - Source code: https://github.com/haffey041707/Zyntra-Ai
 - Hosted interface: https://zyntraai-weld.vercel.app
 
+## Live demo
+
+Open Zyntra in your browser: **[zyntraai-weld.vercel.app](https://zyntraai-weld.vercel.app)**
+
 > The hosted interface cannot use Ollama installed on your personal computer. For free local AI, run this project on the same computer as Ollama.
 
 ## Run Zyntra on another computer
