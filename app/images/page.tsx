@@ -1,0 +1,4 @@
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+export default function Images(){const[items,setItems]=useState<string[]>([]);useEffect(()=>setItems(JSON.parse(localStorage.getItem("zyntra-images")||"[]")),[]);const upload=(f?:File)=>{if(!f)return;const r=new FileReader();r.onload=()=>{const n=[r.result as string,...items];setItems(n);localStorage.setItem("zyntra-images",JSON.stringify(n))};r.readAsDataURL(f)};return <main className="auth-page"><section className="auth-card"><h1>Image library</h1><p>Upload images here, then return to chat to attach them to a question.</p><label className="upload">Upload image<input type="file" accept="image/*" onChange={e=>upload(e.target.files?.[0])}/></label><div className="library">{items.map(x=><img key={x} src={x} alt="Stored"/>)}</div><p className="auth-switch"><Link href="/">Return to chat</Link></p></section></main>}

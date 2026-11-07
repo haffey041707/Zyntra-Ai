@@ -1,0 +1,3 @@
+"use client";
+import { useEffect } from "react";
+export function ModelIndicator(){useEffect(()=>{const click=(event:MouseEvent)=>{const target=(event.target as HTMLElement).closest("button");const text=target?.textContent?.trim();const control=document.querySelector<HTMLElement>(".composer-bottom .mini-control + .mini-control");if(text==="Free"||text==="GPT-6.1 Terra")control?.classList.add("model-open");if(target?.classList.contains("model-choice")||target?.classList.contains("close"))control?.classList.remove("model-open")};document.addEventListener("click",click,true);return()=>document.removeEventListener("click",click,true)},[]);return null}
